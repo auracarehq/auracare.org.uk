@@ -17,7 +17,7 @@ alongside classic search SEO.
 - `sitemap.xml` (prerendered), `robots.txt` with an explicit AI-crawler policy,
   `llms.txt` site summary.
 - Investor deck excluded end-to-end: robots disallow, meta noindex on `/deck`,
-  `X-Robots-Tag: noindex` on the PDF (vercel.json).
+  `X-Robots-Tag: noindex` on the PDF (customStaticWebAppConfig in svelte.config.js).
 
 ## Phase 1 — technical hygiene (small fixes, this week)
 
@@ -107,7 +107,7 @@ LLMs describe Auracare based on what the wider web says, not just auracare.org.u
 1. **Segment AI referrals in PostHog**: referrers containing `chatgpt.com`,
    `perplexity.ai`, `claude.ai`, `copilot.microsoft.com`, `gemini.google.com`.
    This is the GEO conversion metric.
-2. **Log AI crawler hits** (Vercel logs / firewall analytics): GPTBot, ClaudeBot,
+2. **Log AI crawler hits** (Static Web Apps / Front Door logs): GPTBot, ClaudeBot,
    PerplexityBot, OAI-SearchBot fetch frequency shows whether the content is
    being retrieved at all.
 3. **Monthly prompt audit.** Ask the major assistants: "What is Auracare?",

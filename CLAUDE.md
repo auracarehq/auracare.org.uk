@@ -16,12 +16,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a SvelteKit application for Auracare - an AI triage and diagnostics platform for primary care. The application is deployed to Vercel and uses a modern web stack optimized for performance.
+This is a SvelteKit application for Auracare - an AI triage and diagnostics platform for primary care. The application is deployed to Azure Static Web Apps and uses a modern web stack optimized for performance.
 
 ### Tech Stack
 
 - **Framework**: SvelteKit 2.22+ with Svelte 5 (using runes and modern Svelte syntax)
-- **Deployment**: Vercel adapter (@sveltejs/adapter-vercel)
+- **Deployment**: Azure Static Web Apps adapter (svelte-adapter-azure-swa)
 - **Type Safety**: TypeScript with strict mode enabled
 - **Styling**: Tailwind CSS v4 with custom theme utilities and PostCSS
 - **Build Tool**: Vite 7+

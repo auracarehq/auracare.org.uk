@@ -1,8 +1,6 @@
 <script lang="ts">
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import { dev } from '$app/environment';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { cookieConsent } from '$lib/stores/cookieConsent';
 	import { loadPostHog, stopPostHog } from '$lib/analytics/posthog';
 	import SeedBanner from '$lib/components/layout/SeedBanner.svelte';
@@ -15,12 +13,11 @@
 
 	// Only load analytics once the visitor has actively accepted it. This mirrors
 	// the promise on /cookies ("optional and off until you say yes") and keeps us
-	// consent-first under UK PECR/GDPR. Guarded so it injects at most once.
+	// consent-first under UK PECR/GDPR. Guarded so it loads at most once.
 	let analyticsLoaded = false;
 	$effect(() => {
 		if ($cookieConsent === 'accepted' && !analyticsLoaded) {
 			analyticsLoaded = true;
-			injectAnalytics({ mode: dev ? 'development' : 'production' });
 			loadPostHog();
 		} else if ($cookieConsent === 'rejected') {
 			// Only does anything if they accepted earlier in the session and then
