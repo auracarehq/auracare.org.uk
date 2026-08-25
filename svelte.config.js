@@ -14,6 +14,11 @@ const config = {
 			// ahead of the adapter's own, and Static Web Apps takes the first match.
 			customStaticWebAppConfig: {
 				routes: [
+					// Static Web Apps sends anything that looks like a file straight to
+					// blob storage and never applies navigationFallback, so /relay
+					// requests with an extension (array.js, static/*.js) would bypass the
+					// SSR function that proxies PostHog. Force the whole prefix through it.
+					{ route: '/relay/*', rewrite: '/api/sk_render' },
 					// Kept out of search results: the deck is shared by link, not indexed.
 					{
 						route: '/auracare-deck.pdf',
@@ -33,6 +38,10 @@ const config = {
 						}
 					}
 				],
+				// Static Web Apps derives Content-Type from the file extension and a
+				// route `headers` block cannot override it, so the Apple lookup has to
+				// be mapped by extension or it is served as octet-stream.
+				mimeTypes: { '.remotemanagement': 'application/json' },
 				// The adapter still defaults to node:20; match .node-version instead.
 				platform: { apiRuntime: 'node:22' }
 			}

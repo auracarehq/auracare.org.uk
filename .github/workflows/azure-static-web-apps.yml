@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  build_and_deploy:
+  build_and_deploy_job:
     if: github.event_name == 'push' || github.event.action != 'closed'
     runs-on: ubuntu-latest
     name: Build and Deploy
@@ -31,6 +31,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      # The adapter emits an Azure Functions v4 app that requires @azure/functions
+      # at runtime but ships no node_modules, and skip_api_build stops Oryx from
+      # installing them. Without this the SSR function silently deploys as nothing
+      # and every non-prerendered route — /relay included — returns 404.
+      - name: Install SSR function dependencies
+        run: npm install --omit=dev --prefix build/server
+
+      # The adapter writes staticwebapp.config.json to build/, but the deployed
+      # artifact root is build/static, so Azure never reads it there. Copying it in
+      # is what makes the route and mimeTypes rules actually take effect.
+      - name: Stage Static Web Apps config
+        run: cp build/staticwebapp.config.json build/static/staticwebapp.config.json
+
       - name: Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -45,7 +58,7 @@ jobs:
           skip_app_build: true
           skip_api_build: true
 
-  close_pull_request:
+  close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     name: Close Preview Environment

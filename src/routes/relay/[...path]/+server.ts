@@ -13,8 +13,15 @@ const ASSET_HOST = 'https://eu-assets.i.posthog.com';
 const INGEST_HOST = 'https://eu.i.posthog.com';
 
 // Headers that describe our hop to Azure, not the request we are forwarding.
+// `authorization` matters more than it looks: Static Web Apps invokes the SSR
+// function with its own `Bearer` token, and PostHog's asset host sits behind
+// Azure Blob Storage, which rejects that token outright with a 400. Forwarding
+// it breaks every /relay/static/* asset — recorder.js and surveys.js included —
+// while leaving the extensionless ingestion endpoints working, so it fails in a
+// way that is easy to miss.
 const STRIP_REQUEST_HEADERS = new Set([
 	'host',
+	'authorization',
 	'connection',
 	'content-length',
 	'accept-encoding',
@@ -22,7 +29,8 @@ const STRIP_REQUEST_HEADERS = new Set([
 	'x-forwarded-proto',
 	'x-forwarded-for',
 	'x-azure-fdid',
-	'x-ms-original-url'
+	'x-ms-original-url',
+	'x-ms-auth-token'
 ]);
 
 // Hop-by-hop and transport headers that must not be replayed to the browser.
