@@ -23,15 +23,6 @@
 <section class="policy section-y">
 	<div class="container-wide">
 		<article class="prose">
-			<!-- TODO: remove this early-draft notice at public launch. -->
-			<p class="evolving">
-				<em
-					>This policy is an early draft and will evolve (with clearer detail and, where relevant,
-					supporting documentation) before the Portal’s public launch. Material changes will be
-					communicated in-app or by email.</em
-				>
-			</p>
-
 			<h2 id="who-we-are">Who we are</h2>
 			<p>
 				{CONTACT.legalName} (“Auracare”, “we”, “us”) is the data controller for the personal data described
@@ -52,10 +43,9 @@
 				This policy covers two things. First, our patient portal (the “Portal”): a consumer product
 				that builds a personal health “digital twin” from the wearables and apps you connect, and
 				checks in with you over the messaging apps you already use, such as iMessage, WhatsApp or
-				RCS. Second, this website itself: visiting it, joining the waitlist, writing to us with a
-				question or an investor enquiry, and the optional analytics described in our <a
-					href="/cookies">cookie policy</a
-				>.
+				RCS. Second, this website itself: visiting it, signing up for the Portal’s public beta,
+				writing to us with a question or an investor enquiry, and the optional analytics described
+				in our <a href="/cookies">cookie policy</a>.
 			</p>
 			<p>
 				The Portal is a general-wellness product, not a medical device. It is designed to help you
@@ -64,7 +54,7 @@
 				person.
 			</p>
 			<p>
-				The Portal launches in the United Kingdom, the United States, Canada and Australia. The
+				The Portal is offered in the United Kingdom, the United States, Canada and Australia. The
 				whole of this policy applies wherever you are; the
 				<a href="#regional">regional terms</a> section adds the rights and commitments specific to
 				your region, and Washington and Nevada residents also have a dedicated
@@ -78,11 +68,11 @@
 				address and the mobile identity you use to message the Portal), together with basic app and
 				delivery logs that keep the service reliable and secure.
 			</p>
-			<h3>Website visitors and the waitlist</h3>
+			<h3>Website visitors and beta sign-ups</h3>
 			<p>
 				You don’t need an account to visit this site, and most visits leave nothing behind. What we
-				do process: the email address, and any name or details you choose to add, when you join the
-				waitlist; the contents of your message when you write to
+				do process: the email address, and any name or details you choose to add, when you sign up
+				for the Portal’s public beta; the contents of your message when you write to
 				<a href="mailto:{CONTACT.general}">{CONTACT.general}</a> or
 				<a href="mailto:{CONTACT.seed}">{CONTACT.seed}</a>; short-lived server logs that keep the
 				site secure; and, only if you accept them from the consent banner, the optional analytics
@@ -91,8 +81,8 @@
 				analytics never loads.
 			</p>
 			<p>
-				We use this data to operate the site, to tell you when the Portal launches, and to respond
-				to you. Waitlist emails are used only for launch and product updates, every one includes an
+				We use this data to operate the site, to tell you about the Portal, and to respond to you.
+				Sign-up emails are used only for launch and product updates, every one includes an
 				unsubscribe, and we delete your address on request, or within 6 months after launch.
 			</p>
 			<h3>Health &amp; wellness data you connect</h3>
@@ -157,8 +147,9 @@
 				Alongside that, three quieter bases. We process your account data, and run the service you
 				signed up for, because our contract with you requires it (Article 6(1)(b)). We keep the site
 				and service secure, maintain server logs and improve what we build, where none of that
-				involves your health data, under our legitimate interests (Article 6(1)(f)). And the
-				waitlist and website analytics run on your consent, which you can withdraw at any time.
+				involves your health data, under our legitimate interests (Article 6(1)(f)). And beta
+				sign-up emails and website analytics run on your consent, which you can withdraw at any
+				time.
 			</p>
 
 			<h2 id="how-we-use-it">How we use your data</h2>
@@ -258,8 +249,8 @@
 
 			<h2 id="children">Children</h2>
 			<p>
-				The Portal and the waitlist are for adults: you must be at least 18 to use the Portal or to
-				join the waitlist. The service is not directed at children, we do not knowingly collect data
+				The Portal and its beta are for adults: you must be at least 18 to use the Portal or to sign
+				up for the beta. The service is not directed at children, we do not knowingly collect data
 				from anyone under 18, and if we learn that we have, we will delete it.
 			</p>
 
@@ -396,13 +387,3 @@
 		</article>
 	</div>
 </section>
-
-<style>
-	.evolving {
-		background: var(--color-primary-50);
-		border: 1px solid color-mix(in srgb, var(--color-primary-600) 18%, transparent);
-		border-radius: var(--radius-md);
-		padding: 1rem 1.25rem;
-		color: var(--color-ink-soft);
-	}
-</style>

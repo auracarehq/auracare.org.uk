@@ -90,7 +90,7 @@
 		},
 		{
 			q: 'What’s live today, and what isn’t?',
-			a: 'The ontology is live and explorable: 532,000 clinical concepts. The patient portal, the aggregation stage, launches in September 2026. The CDSS core is in development, with clinical trials signed with EC Healthcare (December 2026) and the Chinese Academy of Sciences (February 2027), and the full pipeline targeted for clinics in 2027.'
+			a: 'The ontology is live and explorable: 532,000 clinical concepts. The patient portal, the aggregation stage, is in public beta and open to anyone. The CDSS core is in development, with clinical trials signed with EC Healthcare (December 2026) and the Chinese Academy of Sciences (February 2027), and the full pipeline targeted for clinics in 2027.'
 		},
 		{
 			q: 'Who’s already backing you?',
@@ -113,7 +113,7 @@
 <PageHero
 	title="We are raising our"
 	accent="seed round."
-	sub="The patient portal launches in September 2026 and our first clinical trial begins in December 2026. This round builds the clinical core, certifies the hardware, and takes the portal to launch."
+	sub="The patient portal is in public beta and our first clinical trial begins in December 2026. This round builds the clinical core, certifies the hardware, and takes the portal from beta to scale."
 />
 
 <!-- ================= Who to talk to ================= -->

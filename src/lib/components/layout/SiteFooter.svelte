@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CONTACT, NON_DEVICE_DISCLAIMER, WAITLIST_URL } from '$lib/data/company';
+	import { CONTACT, NON_DEVICE_DISCLAIMER, PORTAL_APP_URL } from '$lib/data/company';
 	const year = new Date().getFullYear();
 </script>
 
@@ -27,7 +27,7 @@
 				<h4>Platform</h4>
 				<a href="/technology">Technology</a>
 				<a href={CONTACT.ontologyUrl} target="_blank" rel="noopener">Ontology explorer</a>
-				<a href={WAITLIST_URL}>Patient portal waitlist</a>
+				<a href={PORTAL_APP_URL}>Patient portal beta</a>
 			</nav>
 
 			<nav class="footer-col" aria-label="Company">

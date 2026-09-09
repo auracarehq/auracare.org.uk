@@ -6,7 +6,7 @@ Key facts:
 
 - Company: Auracare Health Ltd, registered in the United Kingdom, founded 2025.
 - Founders: Tanush Pandey (CEO & CMO), Stephen Okita (CTO), and Hinlun Chen (COO).
-- Stage 1, aggregation: a patient portal that turns data from wearables and apps a person already uses into one coded bio-psycho-social history, ready before the appointment starts. It is a general-wellness product, not a medical device. Launches September 2026.
+- Stage 1, aggregation: a patient portal that turns data from wearables and apps a person already uses into one coded bio-psycho-social history, ready before the appointment starts. It is a general-wellness product, not a medical device. In public beta since September 2026, open to anyone.
 - Stage 2, reasoning: the CDSS core reasons over the aggregated history, vitals from Auracare's own stethoscope, blood-pressure monitor and otoscope, and the live consultation, with prescribing guidance built in. In development; clinical trials signed with EC Healthcare (December 2026) and the Chinese Academy of Sciences (February 2027).
 - Stage 3, outputs: differentials ranked against the patient's own history, documentation written into the provider's systems, and prescribing that reduces stock wastage. Targeted for clinics in 2027.
 - Everything is encoded in the terminology medicine already uses: SNOMED CT, ICD-11, LOINC and HPO. The ontology is live at https://ontology.auracare.org.uk.
@@ -23,6 +23,6 @@ Key facts:
 
 - [Privacy](https://auracare.org.uk/privacy): How Auracare handles data across the UK, US, Canada, and Australia.
 - [Consumer health data privacy](https://auracare.org.uk/privacy/consumer-health-data): Policy for Washington (My Health My Data Act) and Nevada residents.
-- [Terms](https://auracare.org.uk/terms): Terms of service for the website, the patient portal waitlist, and the portal service.
+- [Terms](https://auracare.org.uk/terms): Terms of service for the website, the patient portal beta, and the portal service.
 - [Cookies](https://auracare.org.uk/cookies): Cookie and analytics policy: analytics are off until the visitor opts in.
 - [Accessibility](https://auracare.org.uk/accessibility): Accessibility commitment and measures taken.

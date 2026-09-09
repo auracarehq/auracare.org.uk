@@ -105,7 +105,7 @@
 		</div>
 
 		<div class="nav-cta">
-			<a class="nav-waitlist" href="/investors#contact">Enquire</a>
+			<a class="nav-cta" href="/investors#contact">Enquire</a>
 		</div>
 
 		<button
@@ -148,7 +148,7 @@
 					<a class="nav-invest" href="/investors" onclick={() => (mobileOpen = false)}
 						>For investors</a
 					>
-					<a class="nav-waitlist" href="/investors#contact" onclick={() => (mobileOpen = false)}
+					<a class="nav-cta" href="/investors#contact" onclick={() => (mobileOpen = false)}
 						>Enquire</a
 					>
 				</div>
@@ -261,7 +261,7 @@
 	.nav-invest:hover {
 		color: var(--color-ink);
 	}
-	.nav-waitlist {
+	.nav-cta {
 		display: inline-flex;
 		align-items: center;
 		@media (pointer: coarse) {
@@ -284,11 +284,11 @@
 			transform var(--duration-press) var(--ease-out);
 		white-space: nowrap;
 	}
-	.nav-waitlist:active {
+	.nav-cta:active {
 		transform: scale(0.97);
 	}
 	@media (hover: hover) and (pointer: fine) {
-		.nav-waitlist:hover {
+		.nav-cta:hover {
 			background: #5971cd;
 			color: #fff;
 		}
@@ -338,7 +338,7 @@
 		padding-top: 0.9rem;
 		border-top: 1px solid var(--color-border-default);
 	}
-	.nav-mobile-cta .nav-waitlist,
+	.nav-mobile-cta .nav-cta,
 	.nav-mobile-cta .nav-invest {
 		text-align: center;
 	}

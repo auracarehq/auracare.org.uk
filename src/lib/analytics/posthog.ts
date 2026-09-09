@@ -43,7 +43,7 @@ export function loadPostHog(): Promise<void> {
 			person_profiles: 'identified_only',
 			capture_exceptions: true,
 			capture_heatmaps: true,
-			// A waitlist email address must never reach a session replay.
+			// A visitor's email address must never reach a session replay.
 			session_recording: { maskAllInputs: true },
 			debug: dev
 		});

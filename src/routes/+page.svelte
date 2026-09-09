@@ -7,7 +7,7 @@
 	import StoryTimeline from '$lib/components/home/StoryTimeline.svelte';
 	import MarketTraction from '$lib/components/home/MarketTraction.svelte';
 	import TeamRaise from '$lib/components/home/TeamRaise.svelte';
-	import WaitlistCTA from '$lib/components/home/WaitlistCTA.svelte';
+	import ClosingCTA from '$lib/components/home/ClosingCTA.svelte';
 </script>
 
 <Seo
@@ -27,4 +27,4 @@
 <StoryTimeline />
 <MarketTraction />
 <TeamRaise />
-<WaitlistCTA />
+<ClosingCTA />

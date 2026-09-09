@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/motion';
-	import { CONTACT, NON_DEVICE_DISCLAIMER, WAITLIST_URL } from '$lib/data/company';
+	import { CONTACT, NON_DEVICE_DISCLAIMER, PORTAL_APP_URL } from '$lib/data/company';
 </script>
 
 <!--
   The page's one conversion moment.
 
-  This used to lead with the consumer waitlist, which is the wrong ask for an
+  This used to lead with the consumer portal, which is the wrong ask for an
   umbrella site whose audience is clinicians, providers and investors. The
-  enquiry leads; the waitlist stays, in the position it deserves.
+  enquiry leads; the portal stays, in the position it deserves.
 -->
 <section id="contact" class="closing aura-space">
 	<div class="container-wide closing-inner">
@@ -44,8 +44,10 @@
 		     text that lined up with nothing else in the section. -->
 		<div class="closing-foot">
 			<p class="aside" use:reveal>
-				The patient portal, the first stage of the pipeline, launches in September 2026.
-				<a href={WAITLIST_URL} rel="noopener">Join the waitlist</a>.
+				The patient portal, the first stage of the pipeline, is in public beta and open to anyone. <a
+					href={PORTAL_APP_URL}
+					rel="noopener">Sign up for the beta</a
+				>.
 			</p>
 			<p class="fineprint" use:reveal={{ delay: 60 }}>{NON_DEVICE_DISCLAIMER}</p>
 		</div>
