@@ -15,8 +15,8 @@
  *
  * Nothing here should overclaim: the reasoning core is in development, the
  * CDSS regulatory pathway is not yet confirmed, and the portal is a
- * general-wellness product, not a medical device. Only the ontology graph is
- * live today. Keep unevidenced deck claims (e.g. CDSS performance percentages)
+ * general-wellness product, not a medical device. Live today: the ontology
+ * graph, and the portal's public beta. Keep unevidenced deck claims (e.g. CDSS performance percentages)
  * off the site.
  */
 
@@ -33,7 +33,8 @@ export const CONTACT = {
 	locations: ['London', 'Hong Kong', 'San Francisco']
 } as const;
 
-export const WAITLIST_URL = 'https://app.auracle.health/waitlist';
+/** Where the patient portal's public beta takes sign-ups. */
+export const PORTAL_APP_URL = 'https://app.auracle.health';
 
 /** The patient portal's own home, linked from the investor-facing pages. */
 export const PORTAL_URL = 'https://auracle.health';
@@ -105,8 +106,8 @@ export const STAGES: PipelineStage[] = [
 		tagline: 'The data aggregation engine',
 		blurb:
 			'A patient-facing portal that learns daily life from the sources a person already has, adds their past records, and encodes all of it into SNOMED CT before the appointment starts.',
-		status: 'ships-soon',
-		statusLabel: 'Launches September 2026'
+		status: 'live',
+		statusLabel: 'In public beta'
 	},
 	{
 		key: 'reason',
@@ -149,9 +150,9 @@ export const PIPELINE_ROLE_HEADING = 'One pipeline, sold to providers.';
 
 export const PIPELINE_ROLE: PipelineRole[] = [
 	{
-		stat: 'Sep 2026',
-		title: 'Stage one ships first',
-		body: 'The patient portal launches in September 2026 and starts building coded patient histories, the input everything downstream depends on.'
+		stat: 'Live',
+		title: 'Stage one is shipping',
+		body: 'The patient portal is in public beta, open to anyone, and already building coded patient histories: the input everything downstream depends on.'
 	},
 	{
 		stat: 'Dec 2026',
@@ -303,8 +304,8 @@ export const TIMELINE: Milestone[] = [
 	},
 	{
 		date: 'Sep 2026',
-		title: 'The portal launches',
-		body: 'The patient portal opens to the public, and the ontology goes live for anyone to explore.',
+		title: 'The portal enters public beta',
+		body: 'The patient portal opens its beta to the public — anyone can sign up — and the ontology goes live for anyone to explore.',
 		era: 'ai',
 		now: true
 	},

@@ -9,14 +9,14 @@
 
 <Seo
 	title="Terms"
-	description="The Terms of Service for the Auracare website, the Portal waitlist, and the Portal service."
+	description="The Terms of Service for the Auracare website, the Portal beta, and the Portal service."
 	path="/terms"
 />
 
 <PageHero
 	title="Terms of"
 	accent="Service."
-	sub="These terms govern the Auracare website, the Portal waitlist and, once you’re using it, the Portal service itself. Please read them carefully."
+	sub="These terms govern the Auracare website, the Portal beta and, once you’re using it, the Portal service itself. Please read them carefully."
 	meta="Legal · Last updated {lastUpdated}"
 />
 
@@ -25,31 +25,32 @@
 		<article class="prose">
 			<h2 id="acceptance">1. These terms, and when they apply</h2>
 			<p>
-				By using this website (the “Site”) or joining the waitlist for our patient portal (the
-				“Portal”), you agree to these Terms of Service (the “Terms”). Before you first use the
+				By using this website (the “Site”) or signing up for the public beta of our patient portal
+				(the “Portal”), you agree to these Terms of Service (the “Terms”). Before you first use the
 				Portal, our consumer wellness service, you will be asked to read and accept these Terms
 				during onboarding; by using the Portal you agree to all of them. If you do not agree with
-				any part of these Terms, please do not use the Site, the waitlist or the Portal.
+				any part of these Terms, please do not use the Site, the beta or the Portal.
 			</p>
 
 			<h2 id="who-we-are">2. Who we are</h2>
 			<p>
 				The Site and the Portal are operated by {CONTACT.legalName}, a company registered in
 				{CONTACT.jurisdiction} (“Auracare”, “we”, “us” or “our”). “You” means the person using the Site,
-				the waitlist or the Portal. For general questions, write to
+				the beta or the Portal. For general questions, write to
 				<a href="mailto:{CONTACT.general}">{CONTACT.general}</a>; for anything about your data,
 				<a href="mailto:{CONTACT.privacy}">{CONTACT.privacy}</a>.
 			</p>
 
-			<h2 id="site-waitlist">3. The Site and the waitlist</h2>
+			<h2 id="site-beta">3. The Site and the beta</h2>
 			<p>
 				The Site is provided for general information about Auracare and the products we are
-				building. Joining the waitlist registers your interest and lets us contact you about early
-				access; it does not create any contract to supply a product, grant you access to any
-				product, or guarantee availability, timing, features or pricing. We may change, suspend or
-				withdraw any part of the Site or the waitlist at any time. The Site may link to third-party
-				sites and services we do not control; those links are provided for convenience, their
-				content is not ours, and their inclusion does not imply our endorsement.
+				building. The Portal is in public beta: signing up gives you access to a service that is
+				still being built, and beta features may change, break or be withdrawn without notice.
+				Nothing on the Site creates a contract to supply a product, or guarantees availability,
+				timing, features or pricing. We may change, suspend or withdraw any part of the Site or the
+				beta at any time. The Site may link to third-party sites and services we do not control;
+				those links are provided for convenience, their content is not ours, and their inclusion
+				does not imply our endorsement.
 			</p>
 
 			<h2 id="eligibility">4. Who can use the Portal, and where</h2>
@@ -217,7 +218,7 @@
 				meet them, it is limited to resupplying the service. Subject to all of that, and to the
 				fullest extent permitted by law: we are not liable for any indirect or consequential loss,
 				or for any loss of profits, revenue, data or goodwill; and our total liability to you
-				arising out of or in connection with the Site, the waitlist or the Portal is capped at the
+				arising out of or in connection with the Site, the beta or the Portal is capped at the
 				greater of the amounts you have paid us in the twelve months before the event giving rise to
 				the claim and £100.
 			</p>
@@ -247,8 +248,8 @@
 				not enforce a right straight away, we have not given it up. You may not transfer your rights
 				under these Terms; we may transfer ours to a successor of our business, with notice to you
 				and without reducing your rights. These Terms, together with the policies they link to, are
-				the whole agreement between us about the Site, the waitlist and the Portal, and no one else
-				has any rights under them.
+				the whole agreement between us about the Site, the beta and the Portal, and no one else has
+				any rights under them.
 			</p>
 
 			<h2 id="contact">22. Contact us</h2>
