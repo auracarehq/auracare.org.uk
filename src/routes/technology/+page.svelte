@@ -41,7 +41,7 @@
 			key: 'input',
 			label: 'Input',
 			short: 'Input',
-			body: 'One timeline: everyday-life signals from the patient portal, clinical history, and vitals captured live in the room, all on a single timestamped record.'
+			body: 'One timeline: everyday-life signals from the patient portal, clinical history, intake readings and the clinician’s examination findings, all on a single timestamped record.'
 		},
 		{
 			key: 'encoding',
@@ -71,7 +71,7 @@
 			key: 'outcome',
 			label: 'Medical outcome',
 			short: 'Outcome',
-			body: 'A referral, a prescription, further testing or a lifestyle plan, each checked against safety and against what the clinician is permitted to do where they practise.'
+			body: 'Options for the clinician: a referral, a prescription, further testing or a lifestyle plan, each checked against safety and against what the clinician is permitted to do where they practise.'
 		}
 	];
 
@@ -90,9 +90,9 @@
 	/* --- The patient state ---------------------------------------- */
 	const STATE_SOURCES = [
 		'Everyday-life signals from the patient portal',
-		'Acute vitals, streamed from our own devices',
+		'Intake readings from our own devices',
 		'Lab results & records',
-		'Clinical notes & history',
+		'Examination findings & clinical history',
 		'What a person tells us, in their own words'
 	];
 
@@ -119,7 +119,7 @@
 		{
 			title: 'Red-flag screen',
 			stage: 'Thesis',
-			body: 'A hard, authoritative screen over the differential that can escalate or veto regardless of what the learned side proposed.'
+			body: 'A cited checklist of the features clinical guidelines call red flags, shown to the clinician. It informs the decision; it never raises an alarm.'
 		},
 		{
 			title: 'Jurisdiction guard',
@@ -129,7 +129,7 @@
 		{
 			title: 'Contraindication check',
 			stage: 'Prescribing',
-			body: 'The last gate before any terminal action: interactions, allergies and pharmacogenomic contraindications, checked against the medicine.'
+			body: 'The last check before a treatment option is shown: interactions, allergies and pharmacogenomic contraindications, flagged to the clinician.'
 		},
 		{
 			title: 'Clinical assurance sampling',
@@ -289,13 +289,14 @@
 			</p>
 			<p use:reveal={{ delay: 180 }}>
 				Because every entry carries its date, the record answers questions a snapshot cannot: what a
-				reading was, how it has moved, and whether the direction matters. Iron studies rising. A
-				resting heart rate creeping up over months.
+				reading was and when it was taken, so the clinician can see for themselves how the picture
+				has changed. Iron studies from the spring. A resting heart rate from a year ago.
 			</p>
 			<p use:reveal={{ delay: 220 }}>
-				Acute readings arrive the same way. Our own devices (a recording stethoscope, a
-				blood-pressure monitor, an otoscope) stream straight into the core: a closed
-				hardware-to-software link, with no manual entry and no third-party integration in between.
+				Intake readings arrive the same way. Our own devices (a blood pressure monitor, a
+				thermometer, a scale and height measure) send single readings straight into the core, with
+				no manual entry. Heart and lung sounds, ear images and other examination signals stay with
+				the clinician, who records what they find.
 			</p>
 		</div>
 		<!-- The inputs as a ledger rather than as five tiles: an index, the
@@ -455,8 +456,8 @@
 		<p class="residency-note" use:reveal>
 			<strong>Data residency is jurisdiction-based.</strong> The reasoning core is designed to run inside
 			our own cloud tenant in each market's region, so consented health data stays within infrastructure
-			we control. An architectural commitment for an engine still in development, whose regulatory pathway
-			is under continuous review.
+			we control. An architectural commitment for an engine still in development, and a Class II medical
+			device in Hong Kong, our first market.
 		</p>
 	</div>
 </section>

@@ -22,7 +22,7 @@
 		},
 		{
 			title: 'Hardware / Firmware Engineer',
-			body: 'Build the closed hardware-to-software link behind Auracare: our own recording stethoscope, BP monitor and otoscope, streaming clinical-grade readings straight into the reasoning core.',
+			body: 'Build our intake kit: blood pressure, temperature, height and weight devices made in-house, sending readings straight into the CDSS with no manual entry.',
 			subject: 'Careers: Hardware / Firmware Engineer'
 		},
 		{
