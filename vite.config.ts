@@ -4,9 +4,9 @@ import tailwindcss from '@tailwindcss/postcss';
 
 // PostHog is served from our own origin under /relay so that ad-blockers, which
 // match on posthog.com hostnames, cannot silently drop analytics. In production
-// the rewrites in vercel.json do this; locally the dev and preview servers need
-// the same mapping, otherwise /relay 404s and dev behaves unlike production.
-// Keep these three rules in sync with vercel.json.
+// the SSR route at src/routes/relay does this; locally the dev and preview servers
+// need the same mapping, otherwise /relay 404s and dev behaves unlike production.
+// Keep these three rules in sync with src/routes/relay/[...path]/+server.ts.
 const posthogProxy = {
 	'/relay/static': {
 		target: 'https://eu-assets.i.posthog.com',

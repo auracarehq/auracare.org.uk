@@ -4,11 +4,11 @@ import type { PostHog } from 'posthog-js';
 // Project "Auracare.org.uk" on PostHog EU Cloud (project 238564). This is the
 // write-only ingestion token, which PostHog documents as safe to ship in public
 // apps, so it lives here rather than in a PUBLIC_* env var that would have to be
-// mirrored into Vercel and every contributor's .env.
+// mirrored into the deploy pipeline and every contributor's .env.
 const POSTHOG_KEY = 'phc_xyiseSxRC7ukuXf2nEJ3bappbBBAUa3wpMbdL4Jxdtet';
 
-// First-party path that vercel.json rewrites to PostHog's EU hosts in production
-// and vite.config.ts proxies in dev. Keeping ingestion on our own origin means
+// First-party path that src/routes/relay proxies to PostHog's EU hosts in
+// production and vite.config.ts proxies in dev. Keeping ingestion on our own origin means
 // ad-blockers and locked-down NHS or corporate networks do not silently drop the
 // traffic — Brave, for one, blocks the session-replay script outright when it is
 // requested from posthog.com. Deliberately not named /analytics or /posthog,
@@ -48,8 +48,7 @@ export function loadPostHog(): Promise<void> {
 			debug: dev
 		});
 
-		// Lets local traffic be filtered out of every PostHog view, and mirrors the
-		// `mode` we already pass to Vercel Analytics.
+		// Lets local traffic be filtered out of every PostHog view.
 		posthog.register({ environment: dev ? 'development' : 'production' });
 
 		client = posthog;

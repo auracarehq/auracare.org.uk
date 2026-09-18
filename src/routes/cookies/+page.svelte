@@ -4,7 +4,7 @@
 	import { reveal } from '$lib/actions/motion';
 	import { CONTACT } from '$lib/data/company';
 
-	const LAST_UPDATED = '1 August 2026';
+	const LAST_UPDATED = '17 September 2026';
 
 	interface StorageEntry {
 		key: string;
@@ -29,14 +29,6 @@
 			purpose:
 				'Records your analytics choice from the consent banner, so we honour it and stop asking.',
 			retention: 'Until you clear your browser storage'
-		},
-		{
-			key: 'Vercel Web Analytics',
-			type: 'Cookieless',
-			category: 'Analytics (optional)',
-			purpose:
-				'Privacy-conscious, aggregate usage measurement. Cookieless, and only loaded once you accept analytics.',
-			retention: 'No persistent storage'
 		},
 		{
 			key: 'ph_phc_…_posthog',
@@ -105,14 +97,11 @@
 
 			<h2 use:reveal>Analytics (optional)</h2>
 			<p use:reveal={{ delay: 60 }}>
-				To understand which pages people find useful, we use two analytics tools. <strong
-					>Vercel Web Analytics</strong
-				>
-				gives us cookieless, aggregate traffic numbers. <strong>PostHog</strong> tells us more: page
-				views, rough device and referrer information, which links and buttons get used, click and scroll
-				heatmaps, how long our pages take to load, and any JavaScript errors the site throws at you.
-				Neither is used to advertise to you or to follow you around the wider web. Our PostHog data is
-				held in PostHog&rsquo;s European cloud.
+				To understand which pages people find useful, we use one analytics tool.
+				<strong>PostHog</strong> tells us: page views, rough device and referrer information, which links
+				and buttons get used, click and scroll heatmaps, how long our pages take to load, and any JavaScript
+				errors the site throws at you. It is not used to advertise to you or to follow you around the
+				wider web. Our PostHog data is held in PostHog&rsquo;s European cloud.
 			</p>
 			<p use:reveal={{ delay: 120 }}>
 				PostHog also records a <strong>session replay</strong>: a reconstruction of your visit to
@@ -136,10 +125,9 @@
 			<h2 use:reveal>No advertising or cross-site tracking</h2>
 			<p use:reveal={{ delay: 60 }}>
 				We do not use advertising cookies, cross-site tracking pixels, social-media trackers, or
-				data brokers. There are no third parties following you from this site to another. Vercel and
-				PostHog are suppliers acting on our instructions under contract, and analytics requests to
-				PostHog are routed through our own domain, so nothing here is shared with an advertising
-				network.
+				data brokers. There are no third parties following you from this site to another. PostHog is
+				a supplier acting on our instructions under contract, and analytics requests to PostHog are
+				routed through our own domain, so nothing here is shared with an advertising network.
 			</p>
 
 			<h2 use:reveal>The storage we use</h2>

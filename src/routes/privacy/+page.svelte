@@ -17,7 +17,7 @@
 	accent="on your terms."
 	accentOwnLine
 	sub="This policy explains what we collect, why, and the control you keep over it. Our patient portal connects only the sources you choose, and your consent is explicit, per-source and revocable at any time."
-	meta="Privacy · Last updated 6 August 2026"
+	meta="Privacy · Last updated 17 September 2026"
 />
 
 <section class="policy section-y">
@@ -76,9 +76,8 @@
 				<a href="mailto:{CONTACT.general}">{CONTACT.general}</a> or
 				<a href="mailto:{CONTACT.seed}">{CONTACT.seed}</a>; short-lived server logs that keep the
 				site secure; and, only if you accept them from the consent banner, the optional analytics
-				described in our <a href="/cookies">cookie policy</a> (Vercel Web Analytics, and PostHog, which
-				also records a replay of your visit to this website with anything you type masked). If you decline,
-				analytics never loads.
+				described in our <a href="/cookies">cookie policy</a> (PostHog, which also records a replay of
+				your visit to this website with anything you type masked). If you decline, analytics never loads.
 			</p>
 			<p>
 				We use this data to operate the site, to tell you about the Portal, and to respond to you.

@@ -34,5 +34,6 @@ yarn preview
 
 ## Notes
 
-- Deploys target Vercel using `@sveltejs/adapter-vercel`.
+- Deploys target Azure Static Web Apps using `svelte-adapter-azure-swa`, via
+  `.github/workflows/azure-swa.yml` on push to `main`.
 - If you use a different Node manager, ensure it respects `.nvmrc` (e.g., `fnm env --use-on-cd`).
