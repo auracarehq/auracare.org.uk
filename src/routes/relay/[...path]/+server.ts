@@ -4,6 +4,11 @@ import type { RequestHandler } from './$types';
 // cannot be baked out at build time.
 export const prerender = false;
 
+// posthog-js posts to /e/, /flags/ and /batch/ with a trailing slash. Under the
+// default trailingSlash 'never' SvelteKit answers each one with a 308 to the
+// slash-less path first, so every event costs two requests. Accept both forms.
+export const trailingSlash = 'ignore';
+
 // PostHog is served from our own origin under /relay so that ad-blockers, which
 // match on posthog.com hostnames, cannot silently drop analytics — Brave blocks
 // the session-replay script outright when it is requested from posthog.com.

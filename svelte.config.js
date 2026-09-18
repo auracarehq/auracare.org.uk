@@ -42,7 +42,9 @@ const config = {
 				// mapped here or it is served as octet-stream.
 				mimeTypes: {
 					'.json': 'text/json',
-					'.remotemanagement': 'application/json'
+					'.remotemanagement': 'application/json',
+					// Not in Static Web Apps' default table, so it was served as octet-stream.
+					'.webmanifest': 'application/manifest+json'
 				},
 				// The adapter still defaults to node:20; match .node-version instead.
 				platform: { apiRuntime: 'node:22' }
