@@ -46,7 +46,7 @@
 	<div class="container-wide">
 		<h2 use:reveal>Early days, real momentum.</h2>
 		<p class="market-sub" use:reveal={{ delay: 60 }}>
-			Funding, partnerships and clinical pilots already in place.
+			Funding, partnerships and clinical trials lined up.
 		</p>
 
 		<dl class="ledger">

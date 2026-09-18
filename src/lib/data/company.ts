@@ -4,7 +4,8 @@
  * Framing (Aug 2026): Auracare sells ONE pipeline to healthcare providers, in
  * three stages. Stage 1 aggregates (the patient-facing data aggregation
  * engine, referred to on the site only as "the patient portal"). Stage 2
- * reasons (the CDSS core, plus our own exam hardware and prescribing reference).
+ * reasons (the CDSS core, fed by our own intake devices; the clinician decides).
+ * Stage 3 outputs are suggestions for the clinician, never decisions.
  * Stage 3 outputs (ranked differentials, finished documentation, stock
  * optimisation) and feeds back into stage 1. The portal is a component of the
  * provider package, not a standalone consumer product; never lead with it.
@@ -115,9 +116,9 @@ export const STAGES: PipelineStage[] = [
 		name: 'Reason',
 		tagline: 'The CDSS core',
 		blurb:
-			'Reasons over the aggregated history, live vitals from our own examination devices, and the consultation itself, with prescribing guidance built in.',
+			'Reasons over the aggregated history, intake readings from our own devices, the clinician’s examination findings and the consultation itself, against established clinical guidelines.',
 		status: 'in-development',
-		statusLabel: 'MVP targeted 2027'
+		statusLabel: 'Pilot in March 2027'
 	},
 	{
 		key: 'output',
@@ -125,9 +126,9 @@ export const STAGES: PipelineStage[] = [
 		name: 'Output',
 		tagline: 'What the clinic gets back',
 		blurb:
-			'Differentials ranked against the patient’s own history, documentation written into the provider’s existing systems, and prescribing that cuts stock wastage and tailors drug selection. Insights feed back to stage one.',
+			'Differentials ranked against the patient’s own history for the clinician to review, documentation written into the provider’s existing systems, and treatment options that cut stock wastage and tailor drug selection. Insights feed back to stage one.',
 		status: 'in-development',
-		statusLabel: 'Clinics in 2027'
+		statusLabel: 'Clinics from Q3 2027'
 	}
 ];
 
@@ -157,12 +158,12 @@ export const PIPELINE_ROLE: PipelineRole[] = [
 	{
 		stat: 'Dec 2026',
 		title: 'The clinical core goes to trial',
-		body: 'Clinical trials are signed with EC Healthcare for December 2026 and the Chinese Academy of Sciences for February 2027.'
+		body: 'Clinical trials begin with EC Healthcare in December 2026 and Hyzen Hospital in February 2027, training the reasoning core ahead of a March 2027 pilot.'
 	},
 	{
-		stat: '2027',
+		stat: 'Q3 2027',
 		title: 'The package reaches clinics',
-		body: 'With the hardware certified, providers buy the full pipeline: aggregation, reasoning and outputs, priced on the clinician time it saves.'
+		body: 'After the pilot, providers in Hong Kong buy the full pipeline: aggregation, reasoning and outputs, priced on the clinician time it saves.'
 	}
 ];
 
@@ -200,22 +201,25 @@ export const CARE_LOOP: CareLoopStage[] = [
 		name: 'Reason',
 		actor: 'cdss',
 		title: 'The CDSS works the case',
-		body: 'Shared history, acute vitals, transcription, labs and records reasoned over together. It asks only what is worth asking.',
+		body: 'Shared history, intake readings, examination findings, transcription, labs and records reasoned over together. It asks only what is worth asking.',
 		steps: ['Reasons over everything at once', 'A differential, ordered by likelihood']
 	},
 	{
 		name: 'Decide',
 		actor: 'cdss',
 		title: 'The clinician decides',
-		body: 'A lifestyle plan, a referral or a guideline-aligned medication package, matched to the clinician\u2019s jurisdiction. Their judgement makes the call.',
+		body: 'A lifestyle plan, a referral or guideline-aligned treatment options, matched to the clinician\u2019s jurisdiction. Their judgement makes the call.',
 		steps: ['Three outputs, jurisdiction-matched', 'Notes and reasoning chain written for you']
 	},
 	{
 		name: 'Return',
 		actor: 'portal',
 		title: 'The plan becomes routine',
-		body: 'Advice returns to the portal as reminders tuned to how the person actually lives, and the portal watches the follow-through.',
-		steps: ['Advice tuned to how you live', 'Change flagged before the next appointment']
+		body: 'Lifestyle reminders return to the portal, tuned to how the person actually lives. Clinical advice stays between the patient and their clinician.',
+		steps: [
+			'Wellness reminders tuned to how you live',
+			'A fuller record before the next appointment'
+		]
 	}
 ];
 
@@ -227,10 +231,12 @@ export const CARE_LOOP_HANDOFFS = {
 } as const;
 
 export const REGULATORY_NOTE =
-	'The Auracare CDSS is in development. Its regulatory pathway is not yet confirmed and is under continuous review.';
+	'The Auracare CDSS is in development. In Hong Kong, our first market, it is a Class II medical device: listing is voluntary today, and we are preparing for it.';
 
 /* ------------------------------------------------------------------ */
-/* Our own medical hardware                                            */
+/* Our own medical hardware: the intake kit                            */
+/* Only single intake readings reach the core. Sounds, images and ECGs  */
+/* stay with the clinician, who records the finding (Sep 2026).         */
 /* ------------------------------------------------------------------ */
 
 export interface HardwareDevice {
@@ -240,21 +246,20 @@ export interface HardwareDevice {
 
 export const HARDWARE: HardwareDevice[] = [
 	{
-		name: 'Recording stethoscope',
-		note: 'Captures heart and lung sounds as data the core can read.'
+		name: 'Blood pressure monitor',
+		note: 'Clinical-grade readings, sent straight into the CDSS.'
 	},
 	{
-		name: 'Blood-pressure monitor',
-		note: 'Clinical-grade readings, streamed straight into the reasoning core.'
+		name: 'Thermometer',
+		note: 'Temperature taken at intake, coded on entry.'
 	},
 	{
-		name: 'Otoscope',
-		note: 'Captured and passed to the core automatically.'
+		name: 'Weight and height',
+		note: 'Recorded automatically, coded on entry.'
 	}
 ];
 
-export const HARDWARE_MORE =
-	'More devices are on the way, extending the same closed hardware-to-software link to new measurements.';
+export const HARDWARE_MORE = 'Intake kit connected to the CDSS in late 2027.';
 
 /* ------------------------------------------------------------------ */
 /* Company timeline (scroll animation, with the May-2026 fork)        */
@@ -312,19 +317,31 @@ export const TIMELINE: Milestone[] = [
 	{
 		date: 'Dec 2026',
 		title: 'First clinical trial',
-		body: 'Trials begin with EC Healthcare in Hong Kong, while our stethoscope, BP monitor and otoscope head toward certification.',
+		body: 'Trials begin with EC Healthcare in Hong Kong, testing our transcription model and gathering the records the reasoning core learns from.',
 		era: 'ai'
 	},
 	{
 		date: 'Feb 2027',
-		title: 'Chinese Academy of Sciences trial',
-		body: 'A second trial begins with the CAS, and the CDSS moves toward its MVP.',
+		title: 'Hyzen Hospital trial',
+		body: 'A second clinical trial begins with Hyzen Hospital.',
 		era: 'ai'
 	},
 	{
-		date: '2027',
+		date: 'Mar 2027',
+		title: 'The CDSS pilot',
+		body: 'The CDSS goes into pilot with EC Healthcare clinicians.',
+		era: 'ai'
+	},
+	{
+		date: 'Q3 2027',
 		title: 'Clinics',
-		body: 'With the devices certified, the full pipeline rolls out to providers, China-forward via the Greater Bay Area.',
+		body: 'The full pipeline reaches its first clinics in Hong Kong.',
+		era: 'ai'
+	},
+	{
+		date: 'Late 2027',
+		title: 'The intake kit',
+		body: 'Our own devices send blood pressure, temperature, height and weight straight into the CDSS, with no manual entry.',
 		era: 'ai'
 	}
 ];
@@ -372,8 +389,7 @@ export const MARKET_WAVES: MarketWave[] = [
 		key: 'clinical',
 		tone: 'clinical',
 		title: 'Clinical trials',
-		caption:
-			'Auracare enters clinical trials with hospitals and institutions in Hong Kong and China.'
+		caption: 'The CDSS enters clinical trials with hospital groups in Hong Kong and mainland China.'
 	},
 	{
 		order: 2,
@@ -381,7 +397,7 @@ export const MARKET_WAVES: MarketWave[] = [
 		tone: 'crossover',
 		title: 'Product crossover',
 		caption:
-			'The CDSS follows the portal into its wellness markets; the portal follows the CDSS into the CAS markets.'
+			'The CDSS follows the portal into its wellness markets, starting with the United States; the portal follows the CDSS into Hong Kong and mainland China.'
 	},
 	{
 		order: 3,
@@ -442,7 +458,7 @@ export const MARKET_POINTS: MarketPoint[] = [
 		coords: [113.2644, 23.1291],
 		tone: 'clinical',
 		wave: 1,
-		label: 'Clinical trials with hospitals and institutions, via the Greater Bay Area'
+		label: 'Clinical trials with hospital groups, via the Greater Bay Area'
 	},
 	{
 		name: 'Hong Kong',
@@ -633,14 +649,14 @@ export const TRACTION: { stat: string; label: string }[] = [
 	{ stat: '$134k', label: 'UK government funding awarded' },
 	{ stat: '$400k', label: 'Angel investment, Hong Kong' },
 	{ stat: 'Dec 2026', label: 'Clinical trial, EC Healthcare' },
-	{ stat: 'Feb 2027', label: 'Clinical trial, Chinese Academy of Sciences' },
-	{ stat: '2', label: 'Hardware partnerships, Chinese OEMs' }
+	{ stat: 'Feb 2027', label: 'Clinical trial, Hyzen Hospital' },
+	{ stat: 'Oct 2025', label: 'Research office, Chinese Academy of Sciences' }
 ];
 
 /**
  * The foundation box: who is building this and the partnership that opens the
  * clinical door. Not universities-as-partners, but founders' research background,
- * plus the agreed CAS route to trials.
+ * plus the research relationship with the CAS.
  */
 export interface FoundationPoint {
 	title: string;
@@ -648,7 +664,7 @@ export interface FoundationPoint {
 }
 
 export const FOUNDATION_EYEBROW = 'The foundation';
-export const FOUNDATION_TITLE = 'Research pedigree, and a route to trials';
+export const FOUNDATION_TITLE = 'Research pedigree, and a route to more hospitals';
 
 export const FOUNDATION_POINTS: FoundationPoint[] = [
 	{
@@ -657,7 +673,7 @@ export const FOUNDATION_POINTS: FoundationPoint[] = [
 	},
 	{
 		title: 'Chinese Academy of Sciences',
-		body: 'A partnership agreed with the CAS gives us access to clinical trials and the resources to run them, our route into the clinic.'
+		body: 'A research office at ZIAT, a CAS institute, since October 2025, and an ongoing discussion about running trials through CAS-affiliated hospitals.'
 	}
 ];
 

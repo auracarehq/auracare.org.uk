@@ -90,15 +90,15 @@
 		},
 		{
 			q: 'What’s live today, and what isn’t?',
-			a: 'The ontology is live and explorable: 532,000 clinical concepts. The patient portal, the aggregation stage, is in public beta and open to anyone. The CDSS core is in development, with clinical trials signed with EC Healthcare (December 2026) and the Chinese Academy of Sciences (February 2027), and the full pipeline targeted for clinics in 2027.'
+			a: 'The ontology is live and explorable: 532,000 clinical concepts. The patient portal, the aggregation stage, is in public beta and open to anyone. The CDSS core is in development, with clinical trials starting with EC Healthcare (December 2026) and Hyzen Hospital (February 2027), a pilot in March 2027, and the full pipeline targeted for clinics in Hong Kong from Q3 2027.'
 		},
 		{
 			q: 'Who’s already backing you?',
-			a: 'A $400k angel investment from Hong Kong, around $400k in resources from the Founders Factory Healthcare accelerator, and $134k in UK government funding. We built 28 UK pharmacy partnerships and piloted the CDSS across them, and two Chinese OEM partnerships build our examination hardware.'
+			a: 'A $400k angel investment from Hong Kong, around $400k in resources from the Founders Factory Healthcare accelerator, and $134k in UK government funding. We built 28 UK pharmacy partnerships and piloted the CDSS across them, and we manufacture our own intake devices in-house.'
 		},
 		{
 			q: 'How do you handle regulation?',
-			a: 'The patient portal ships as a general-wellness product under the FD&C Act §520(o)(1)(B) exclusion, so it never diagnoses or treats. The Auracare CDSS is clinical decision support; its regulatory pathway is under active review.'
+			a: 'The patient portal ships as a general-wellness product under the FD&C Act §520(o)(1)(B) exclusion, so it never diagnoses or treats. The Auracare CDSS is clinical decision support: the clinician makes every decision. In Hong Kong, our first market, it is a Class II medical device; listing is voluntary today, and we are preparing for it.'
 		}
 	];
 </script>
@@ -113,7 +113,7 @@
 <PageHero
 	title="We are raising our"
 	accent="seed round."
-	sub="The patient portal is in public beta and our first clinical trial begins in December 2026. This round builds the clinical core, certifies the hardware, and takes the portal from beta to scale."
+	sub="The patient portal is in public beta and our first clinical trial begins in December 2026. This round builds the clinical core, runs our clinical trials, and takes the portal from beta to scale."
 />
 
 <!-- ================= Who to talk to ================= -->

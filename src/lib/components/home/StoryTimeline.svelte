@@ -91,9 +91,9 @@
 	}
 	/* The spine stops at the last entry. At `height: 100%` it inherited the
 	   container's trailing space and the last node's bottom margin, so the line
-	   carried on into empty page below June 2027. */
+	   carried on into empty page below the final entry. */
 	/* The spine stops at the last entry, and its last stretch fades out rather
-	   than ending on a hard cut: the story keeps going past June 2027, and a
+	   than ending on a hard cut: the story keeps going past the final entry, and a
 	   line that simply stops reads as the end of it. */
 	.tl-track {
 		top: 6px;
